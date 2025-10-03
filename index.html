@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta -->
+  <meta name="description" content="InstantAge.live - Free Age Calculator to calculate exact age in years, months, weeks, days, hours, minutes, and seconds. Supports all countries with live real-time countdown.">
+  <meta name="keywords" content="Age Calculator, Calculate Age, Exact Age, Date of Birth Calculator, Live Age Counter, InstantAge, Birthday Calculator">
+  <meta name="author" content="InstantAge.live">
+  <title>Age Calculator - Exact Age in Years, Months, Days & Seconds | InstantAge.live</title>
+
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #0066cc;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .theme-toggle button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 30px;
+      font-size: 1.5rem;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #0066cc;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #004a99;
+    }
+    .results {
+      margin-top: 20px;
+      background: #f1f3f5;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .ad-placeholder {
+      margin: 30px 0;
+      text-align: center;
+      padding: 15px;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85rem;
+      background: #f1f1f1;
+      color: #555;
+    }
+
+    /* Dark Mode */
+    body.dark {
+      background: #121212;
+      color: #e9ecef;
+    }
+    body.dark header {
+      background: #333;
+    }
+    body.dark form {
+      background: #1e1e1e;
+      color: #fff;
+    }
+    body.dark .results {
+      background: #2a2a2a;
+    }
+    body.dark button {
+      background: #2196f3;
+    }
+    body.dark button:hover {
+      background: #1976d2;
+    }
+    body.dark .ad-placeholder {
+      background: #1e1e1e;
+      border-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="theme-toggle">
+      <button aria-label="Switch to Light Mode" onclick="setTheme('light')">🌞</button>
+      <button aria-label="Switch to Dark Mode" onclick="setTheme('dark')">🌙</button>
+    </div>
+    <h1>InstantAge.live - Age Calculator</h1>
+    <p>Calculate your exact age in years, months, days, and even seconds.</p>
+  </header>
+
+  <main>
+    <h2>Enter Your Birth Details</h2>
+    <form onsubmit="calculateAge(event)">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required aria-required="true">
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="default">Select your country</option>
+        <option value="china">China (Traditional Age System)</option>
+        <option value="korea">South Korea (Traditional Age System)</option>
+        <option value="other">Other Countries (Standard Age)</option>
+      </select>
+
+      <label for="reference">Age at the Date of:</label>
+      <input type="date" id="reference" name="reference">
+
+      <button type="submit">Calculate Age</button>
+    </form>
+
+    <div id="result" class="results" aria-live="polite"></div>
+
+    <div class="ad-placeholder" role="complementary" aria-label="Advertisement">
+      [Google Ad Placeholder]
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 InstantAge.live | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function setTheme(mode) {
+      document.body.className = mode === 'dark' ? 'dark' : '';
+    }
+
+    function calculateAge(event) {
+      event.preventDefault();
+      const dob = new Date(document.getElementById("dob").value);
+      const referenceInput = document.getElementById("reference").value;
+      const refDate = referenceInput ? new Date(referenceInput) : new Date();
+      const country = document.getElementById("country").value;
+
+      if (!dob) return;
+
+      let years = refDate.getFullYear() - dob.getFullYear();
+      let months = refDate.getMonth() - dob.getMonth();
+      let days = refDate.getDate() - dob.getDate();
+
+      if (days < 0) {
+        months--;
+        days += new Date(refDate.getFullYear(), refDate.getMonth(), 0).getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      // Handle special cases
+      if (country === "korea") years += 1;
+      if (country === "china") years += 1;
+
+      document.getElementById("result").innerHTML = `
+        <h3>Results:</h3>
+        <p><strong>Years:</strong> ${years}</p>
+        <p><strong>Months:</strong> ${months}</p>
+        <p><strong>Days:</strong> ${days}</p>
+      `;
+    }
+
+    function startLive() {
+      const dob = new Date(document.getElementById("dob").value);
+      if (!dob) return alert("Please enter your date of birth first.");
+
+      setInterval(() => {
+        const now = new Date();
+        let diff = now - dob;
+
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+        diff -= years * 365.25 * 24 * 60 * 60 * 1000;
+
+        const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+        diff -= months * 30.44 * 24 * 60 * 60 * 1000;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        diff -= days * 24 * 60 * 60 * 1000;
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        diff -= hours * 60 * 60 * 1000;
+
+        const minutes = Math.floor(diff / (1000 * 60));
+        diff -= minutes * 60 * 1000;
+
+        const seconds = Math.floor(diff / 1000);
+
+        document.getElementById("result").innerHTML = `
+          <h3>Live Age:</h3>
+          <p><strong>Years:</strong> ${years}</p>
+          <p><strong>Months:</strong> ${months}</p>
+          <p><strong>Days:</strong> ${days}</p>
+          <p><strong>Hours:</strong> ${hours}</p>
+          <p><strong>Minutes:</strong> ${minutes}</p>
+          <p><strong>Seconds:</strong> ${seconds}</p>
+        `;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
