@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zodiac Calculator</title>
+<meta name="description" content="Find your Western zodiac sign">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="header"><div class="container"><h1>Zodiac Calculator</h1><div class="small">Instant Calculators Hub</div></div></header>
+<nav><div class="container">
+<a href="index.html">Home</a> <a href="loan-emi-calculator.html">Loan/EMI</a> <a href="sip-calculator.html">SIP</a> <a href="fd-calculator.html">FD</a> <a href="rd-calculator.html">RD</a> <a href="bmi-calculator.html">BMI</a> <a href="bmr-calculator.html">BMR</a> <a href="calorie-calculator.html">Calories</a> <a href="age-calculator.html">Age</a> <a href="zodiac-calculator.html">Zodiac</a>
+</div></nav>
+<main class="main container">
+
+<div class="card">
+  <h2>Zodiac Sign Finder</h2>
+  <form id="zodCalc"><div class="form-row"><label>Date of birth</label><input id="zodDOB" type="date" required></div><button type="submit">Find zodiac</button></form>
+  <div id="zodResult" class="results"></div>
+</div>
+<script>
+function zodiacFrom(d){const day=d.getDate();const m=d.getMonth()+1;
+ if((m==1 && day>=20)||(m==2 && day<=18))return 'Aquarius';
+ if((m==2 && day>=19)||(m==3 && day<=20))return 'Pisces';
+ if((m==3 && day>=21)||(m==4 && day<=19))return 'Aries';
+ if((m==4 && day>=20)||(m==5 && day<=20))return 'Taurus';
+ if((m==5 && day>=21)||(m==6 && day<=20))return 'Gemini';
+ if((m==6 && day>=21)||(m==7 && day<=22))return 'Cancer';
+ if((m==7 && day>=23)||(m==8 && day<=22))return 'Leo';
+ if((m==8 && day>=23)||(m==9 && day<=22))return 'Virgo';
+ if((m==9 && day>=23)||(m==10 && day<=22))return 'Libra';
+ if((m==10 && day>=23)||(m==11 && day<=21))return 'Scorpio';
+ if((m==11 && day>=22)||(m==12 && day<=21))return 'Sagittarius';
+ return 'Capricorn';}
+document.getElementById('zodCalc').addEventListener('submit',function(e){e.preventDefault();
+ const d=new Date(document.getElementById('zodDOB').value); document.getElementById('zodResult').innerHTML=`<strong>Zodiac:</strong> ${zodiacFrom(d)}`;
+});
+</script>
+
+</main>
+<footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
+</body></html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recurring Deposit (RD) Calculator</title>
+<meta name="description" content="Calculate RD maturity">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="header"><div class="container"><h1>Recurring Deposit (RD) Calculator</h1><div class="small">Instant Calculators Hub</div></div></header>
+<nav><div class="container">
+<a href="index.html">Home</a> <a href="loan-emi-calculator.html">Loan/EMI</a> <a href="sip-calculator.html">SIP</a> <a href="fd-calculator.html">FD</a> <a href="rd-calculator.html">RD</a> <a href="bmi-calculator.html">BMI</a> <a href="bmr-calculator.html">BMR</a> <a href="calorie-calculator.html">Calories</a> <a href="age-calculator.html">Age</a> <a href="zodiac-calculator.html">Zodiac</a>
+</div></nav>
+<main class="main container">
+
+<div class="card">
+  <h2>RD Calculator</h2>
+  <form id="rdCalc">
+    <div class="form-row"><label>Monthly deposit (₹)</label><input id="rdMonthly" type="number" required></div>
+    <div class="form-row"><label>Annual interest rate (%)</label><input id="rdRate" type="number" step="0.01" required></div>
+    <div class="form-row"><label>Tenure (years)</label><input id="rdYears" type="number" step="0.1" required></div>
+    <button type="submit">Calculate</button>
+  </form>
+  <div id="rdResult" class="results"></div>
+</div>
+<script>
+document.getElementById('rdCalc').addEventListener('submit',function(e){e.preventDefault();
+  const m=parseFloat(document.getElementById('rdMonthly').value)||0;
+  const annual=parseFloat(document.getElementById('rdRate').value)||0;
+  const yrs=parseFloat(document.getElementById('rdYears').value)||0;
+  const n=Math.round(yrs*12); const r=annual/100;
+  let M=0; for(let i=1;i<=n;i++){ M += m * Math.pow(1 + r/12, (n - i + 1)); }
+  document.getElementById('rdResult').innerHTML=`<strong>Maturity:</strong> ₹${M.toFixed(2)}<br><span class='small'>Deposited: ₹${(m*n).toFixed(2)}</span>`;
+});
+</script>
+
+</main>
+<footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
+</body></html>
