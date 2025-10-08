@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Discount &amp; Tip Calculator</title>
-<meta name="description" content="Calculate discounts and tips">
+<title>Discount & Tip Calculator | Calculate Final Price, Discounts & Restaurant Tips</title>
+<meta name="description" content="Free online discount and tip calculator to quickly calculate discounted price, tip amount, and final total. Ideal for shopping, restaurants, and service bills.">
+<meta name="keywords" content="discount calculator, tip calculator, restaurant tip calculator, shopping discount calculator, final bill calculator, percentage off calculator, price after discount, total with tip, online calculator">
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <header class="header"><div class="container"><h1>Discount &amp; Tip Calculator</h1><div class="small"></div></div></header>
@@ -25,12 +25,17 @@
 <div id="discResult" class="results"></div></div>
 <script>
 document.getElementById('discCalc').addEventListener('submit',function(e){e.preventDefault();
- const p=parseFloat(document.getElementById('origPrice').value)||0; const d=parseFloat(document.getElementById('discPerc').value)||0; const t=parseFloat(document.getElementById('tipPerc').value)||0;
- const after = p * (1 - d/100); const tip = after * (t/100); const total = after + tip;
+ const p=parseFloat(document.getElementById('origPrice').value)||0; 
+ const d=parseFloat(document.getElementById('discPerc').value)||0; 
+ const t=parseFloat(document.getElementById('tipPerc').value)||0;
+ const after = p * (1 - d/100); 
+ const tip = after * (t/100); 
+ const total = after + tip;
  document.getElementById('discResult').innerHTML=`<strong>After discount:</strong> ₹${after.toFixed(2)}<br><strong>Tip:</strong> ₹${tip.toFixed(2)}<br><strong>Total:</strong> ₹${total.toFixed(2)}`;
 });
 </script>
 
 </main>
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
-</body></html>
+</body>
+</html>
