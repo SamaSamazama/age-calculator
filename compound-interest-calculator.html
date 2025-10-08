@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compound Interest Calculator</title>
-<meta name="description" content="Calculate compound interest and maturity">
+<title>Compound Interest Calculator | Calculate Investment Growth & Maturity</title>
+<meta name="description" content="Free online compound interest calculator to estimate investment growth, maturity value, and interest earned over time. Perfect for savings, FD, and long-term investments.">
+<meta name="keywords" content="compound interest calculator, investment calculator, interest calculator, maturity amount calculator, FD interest calculator, savings calculator, monthly compound interest, yearly compound interest, online calculator">
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <header class="header"><div class="container"><h1>Compound Interest Calculator</h1><div class="small"></div></div></header>
@@ -28,11 +28,16 @@
 </div>
 <script>
 document.getElementById('compCalc').addEventListener('submit',function(e){e.preventDefault();
-  const P=parseFloat(document.getElementById('compP').value)||0; const r=parseFloat(document.getElementById('compR').value)/100||0; const t=parseFloat(document.getElementById('compT').value)||0; const n=parseInt(document.getElementById('compN').value)||12;
-  const A = P * Math.pow(1 + r/n, n*t); document.getElementById('compResult').innerHTML=`<strong>Maturity:</strong> ₹${A.toFixed(2)}<br><span class='small'>Interest ₹${(A-P).toFixed(2)}</span>`;
+  const P=parseFloat(document.getElementById('compP').value)||0; 
+  const r=parseFloat(document.getElementById('compR').value)/100||0; 
+  const t=parseFloat(document.getElementById('compT').value)||0; 
+  const n=parseInt(document.getElementById('compN').value)||12;
+  const A = P * Math.pow(1 + r/n, n*t); 
+  document.getElementById('compResult').innerHTML=`<strong>Maturity:</strong> ₹${A.toFixed(2)}<br><span class='small'>Interest ₹${(A-P).toFixed(2)}</span>`;
 });
 </script>
 
 </main>
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
-</body></html>
+</body>
+</html>
