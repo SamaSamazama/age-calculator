@@ -3,19 +3,51 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Zodiac Calculator – Find Your Western Zodiac Sign Instantly | Instant Calculators</title>
-<meta name="description" content="Find your Western zodiac sign instantly using our free Zodiac Calculator. Discover whether you're Aries, Taurus, Gemini, Leo, Virgo, Libra, or another star sign.">
-<meta name="keywords" content="zodiac calculator, zodiac sign finder, horoscope calculator, astrology calculator, zodiac sign by date of birth, star sign calculator, western zodiac calculator, zodiac finder online">
-
+<title>Zodiac Calculator - Find Your Western Zodiac Sign Online | Instantage.live</title>
+<meta name="description" content="Find your Western zodiac sign instantly online. Enter your date of birth and discover your zodiac sign using our free Zodiac Calculator.">
+<link rel="canonical" href="https://instantage.live/zodiac-calculator.html">
 <link rel="stylesheet" href="style.css">
-</head>
 
+<!-- Structured Data (FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find my zodiac sign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter your date of birth in the Zodiac Calculator and click Find Zodiac to instantly discover your Western zodiac sign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the zodiac signs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Western zodiac consists of 12 signs: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Zodiac Calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this Zodiac Calculator is completely free and works instantly in your browser."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
 <body>
 <header class="header">
   <div class="container">
     <h1>Zodiac Calculator</h1>
-    <div class="small"></div>
+    <p class="small">Discover your Western zodiac sign quickly online</p>
   </div>
 </header>
 
@@ -36,41 +68,42 @@
 
 <main class="main container">
   <div class="card">
-    <h2>Zodiac Sign Finder</h2>
+    <h2>Find Your Zodiac Sign</h2>
     <form id="zodCalc">
       <div class="form-row">
         <label>Date of birth</label>
         <input id="zodDOB" type="date" required>
       </div>
-      <button type="submit">Find zodiac</button>
+      <button type="submit">Find Zodiac</button>
     </form>
     <div id="zodResult" class="results"></div>
   </div>
 
-  <script>
-  function zodiacFrom(d){
-    const day=d.getDate();
-    const m=d.getMonth()+1;
-    if((m==1 && day>=20)||(m==2 && day<=18))return 'Aquarius';
-    if((m==2 && day>=19)||(m==3 && day<=20))return 'Pisces';
-    if((m==3 && day>=21)||(m==4 && day<=19))return 'Aries';
-    if((m==4 && day>=20)||(m==5 && day<=20))return 'Taurus';
-    if((m==5 && day>=21)||(m==6 && day<=20))return 'Gemini';
-    if((m==6 && day>=21)||(m==7 && day<=22))return 'Cancer';
-    if((m==7 && day>=23)||(m==8 && day<=22))return 'Leo';
-    if((m==8 && day>=23)||(m==9 && day<=22))return 'Virgo';
-    if((m==9 && day>=23)||(m==10 && day<=22))return 'Libra';
-    if((m==10 && day>=23)||(m==11 && day<=21))return 'Scorpio';
-    if((m==11 && day>=22)||(m==12 && day<=21))return 'Sagittarius';
-    return 'Capricorn';
-  }
+<script>
+function zodiacFrom(d){
+  const day=d.getDate();
+  const m=d.getMonth()+1;
+  if((m==1 && day>=20)||(m==2 && day<=18)) return 'Aquarius';
+  if((m==2 && day>=19)||(m==3 && day<=20)) return 'Pisces';
+  if((m==3 && day>=21)||(m==4 && day<=19)) return 'Aries';
+  if((m==4 && day>=20)||(m==5 && day<=20)) return 'Taurus';
+  if((m==5 && day>=21)||(m==6 && day<=20)) return 'Gemini';
+  if((m==6 && day>=21)||(m==7 && day<=22)) return 'Cancer';
+  if((m==7 && day>=23)||(m==8 && day<=22)) return 'Leo';
+  if((m==8 && day>=23)||(m==9 && day<=22)) return 'Virgo';
+  if((m==9 && day>=23)||(m==10 && day<=22)) return 'Libra';
+  if((m==10 && day>=23)||(m==11 && day<=21)) return 'Scorpio';
+  if((m==11 && day>=22)||(m==12 && day<=21)) return 'Sagittarius';
+  return 'Capricorn';
+}
 
-  document.getElementById('zodCalc').addEventListener('submit',function(e){
-    e.preventDefault();
-    const d=new Date(document.getElementById('zodDOB').value);
-    document.getElementById('zodResult').innerHTML=`<strong>Zodiac:</strong> ${zodiacFrom(d)}`;
-  });
-  </script>
+document.getElementById('zodCalc').addEventListener('submit',function(e){
+  e.preventDefault();
+  const d=new Date(document.getElementById('zodDOB').value); 
+  document.getElementById('zodResult').innerHTML=`<strong>Zodiac:</strong> ${zodiacFrom(d)}`;
+});
+</script>
+
 </main>
 
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
