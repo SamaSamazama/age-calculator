@@ -3,43 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Free BMI Calculator Online - Calculate Body Mass Index & Weight Category</title>
-<meta name="description" content="Easily calculate your Body Mass Index (BMI) online. Find out whether you are underweight, normal, overweight, or obese using our free BMI calculator tool.">
-<meta name="keywords" content="bmi calculator, body mass index calculator, online bmi calculator, calculate bmi, weight category calculator, healthy weight tool, bmi chart, fitness calculator, ideal weight calculator">
-
-<!-- Open Graph for Social Sharing -->
-<meta property="og:title" content="Free BMI Calculator Online - Calculate Body Mass Index & Weight Category">
-<meta property="og:description" content="Use our free BMI calculator to check your body mass index and know your health category instantly. Quick, accurate, and easy to use.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://instantage.live/bmi-calculator.html">
-<meta property="og:site_name" content="Instant Calculators Hub">
-
-<!-- Canonical & Robots -->
+<title>BMI Calculator - Calculate Your Body Mass Index Online | Instantage.live</title>
+<meta name="description" content="Calculate your Body Mass Index (BMI) easily online. Find out your BMI category—Underweight, Normal, Overweight, or Obese—instantly and accurately.">
 <link rel="canonical" href="https://instantage.live/bmi-calculator.html">
-<meta name="robots" content="index, follow">
-
 <link rel="stylesheet" href="style.css">
+
+<!-- Structured Data (FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter your weight in kilograms and height in centimeters, then click Calculate BMI to instantly find your Body Mass Index."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do BMI results mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your BMI result indicates whether you are Underweight, Normal, Overweight, or Obese based on standard BMI categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this BMI calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this BMI Calculator is completely free and works instantly in your browser."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
-
 <body>
-<header class="header"><div class="container"><h1>BMI Calculator</h1><div class="small"></div></div></header>
-<nav><div class="container">
-<a href="index.html">Home</a> <a href="loan-emi-calculator.html">Loan/EMI</a> <a href="sip-calculator.html">SIP</a> <a href="fd-calculator.html">FD</a> <a href="rd-calculator.html">RD</a> <a href="bmi-calculator.html">BMI</a> <a href="bmr-calculator.html">BMR</a> <a href="calorie-calculator.html">Calories</a> <a href="age-calculator.html">Age</a> <a href="zodiac-calculator.html">Zodiac</a>
-</div></nav>
-<main class="main container">
+<header class="header">
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <p class="small">Calculate your Body Mass Index easily online</p>
+  </div>
+</header>
 
-<div class="card">
-  <h2>BMI Calculator</h2>
-  <form id="bmiCalc">
-    <div class="form-row"><label>Weight (kg)</label><input id="bmiW" type="number" step="0.1" required></div>
-    <div class="form-row"><label>Height (cm)</label><input id="bmiH" type="number" step="0.1" required></div>
-    <button type="submit">Calculate BMI</button>
-  </form>
-  <div id="bmiResult" class="results"></div>
-</div>
+<nav>
+  <div class="container">
+    <a href="index.html">Home</a> 
+    <a href="loan-emi-calculator.html">Loan/EMI</a> 
+    <a href="sip-calculator.html">SIP</a> 
+    <a href="fd-calculator.html">FD</a> 
+    <a href="rd-calculator.html">RD</a> 
+    <a href="bmi-calculator.html">BMI</a> 
+    <a href="bmr-calculator.html">BMR</a> 
+    <a href="calorie-calculator.html">Calories</a> 
+    <a href="age-calculator.html">Age</a> 
+    <a href="zodiac-calculator.html">Zodiac</a>
+  </div>
+</nav>
+
+<main class="main container">
+  <div class="card">
+    <h2>Calculate Your BMI</h2>
+    <form id="bmiCalc">
+      <div class="form-row">
+        <label>Weight (kg)</label>
+        <input id="bmiW" type="number" step="0.1" required>
+      </div>
+      <div class="form-row">
+        <label>Height (cm)</label>
+        <input id="bmiH" type="number" step="0.1" required>
+      </div>
+      <button type="submit">Calculate BMI</button>
+    </form>
+    <div id="bmiResult" class="results"></div>
+  </div>
+
 <script>
-document.getElementById('bmiCalc').addEventListener('submit',function(e){e.preventDefault();
+document.getElementById('bmiCalc').addEventListener('submit',function(e){
+  e.preventDefault();
   const w=parseFloat(document.getElementById('bmiW').value)||0;
   const h=parseFloat(document.getElementById('bmiH').value)/100||0;
   if(h<=0){document.getElementById('bmiResult').innerText='Invalid height';return;}
@@ -50,6 +96,7 @@ document.getElementById('bmiCalc').addEventListener('submit',function(e){e.preve
 </script>
 
 </main>
+
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
 </body>
 </html>
