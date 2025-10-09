@@ -30,7 +30,7 @@ body {
 }
 
 .header .small {
-  color: #fff;        /* ensures visibility on blue background */
+  color: #fff !important;        /* ensures visibility on blue background */
   opacity: 0.9;       /* softer white tone */
   font-size: 13px;
   margin: 0;
