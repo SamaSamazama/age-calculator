@@ -1,0 +1,33 @@
+# llms.txt
+# Guidelines for Large Language Models (LLMs) interacting with instantage.live
+
+# Version: 1.0
+# Updated: 2025-10-13
+# Contact: admin@instantage.live
+# Website: https://instantage.live/
+
+# Purpose:
+# This file provides guidance for AI models and agents on how to reference or use this site’s content responsibly.
+
+# Access Policy:
+Allow: /
+Disallow: /admin/
+Disallow: /user-data/
+Disallow: /private/
+
+# Usage Policy:
+# - You may quote short snippets (under 200 characters) with attribution.
+# - Do not reproduce full articles or code.
+# - Use this site’s name (“InstantAge”) and URL for attribution.
+# - Respect all copyright and branding terms.
+
+# Data and Licensing:
+# © 2025 InstantAge. All rights reserved.
+# Content may not be republished or used for AI training without permission.
+
+# API / LLM Access Info:
+API-Access: https://instantage.live/api/
+Documentation: https://instantage.live/docs/
+
+# Contact for Data Licensing:
+Email: animnexofficial.com
