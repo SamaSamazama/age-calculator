@@ -3,101 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fixed Deposit (FD) Calculator - Calculate Maturity Amount Online | Instantage.live</title>
-<meta name="description" content="Calculate your Fixed Deposit (FD) maturity amount and interest instantly online. Find out how much your investment will grow with our free FD Calculator.">
+<title>Fixed Deposit (FD) Calculator – Calculate FD Maturity Amount | Instantage.live</title>
+<meta name="description" content="Use our free Fixed Deposit (FD) Calculator to calculate your FD maturity amount and total interest earned. Quick, accurate, and easy to use.">
 <link rel="canonical" href="https://instantage.live/fd-calculator.html">
 <link rel="stylesheet" href="style.css">
 
-<!-- Structured Data (FAQ) -->
+<!-- Structured Data (FAQ + SoftwareApplication) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "How do I calculate FD maturity amount?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Enter the principal amount, annual interest rate, tenure, and compounding frequency, then click Calculate to instantly find your FD maturity amount and interest earned."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Fixed Deposit (FD)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Fixed Deposit (FD) is a financial instrument where you invest a lump sum for a fixed period at a predetermined interest rate to earn secure returns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is FD maturity amount calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FD maturity is calculated using compound interest based on the principal, interest rate, tenure, and compounding frequency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this FD Calculator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the FD Calculator on Instantage.live is completely free, works instantly, and doesn’t require any signup."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "What is FD?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A Fixed Deposit (FD) is a financial instrument where you deposit money for a fixed tenure at a predetermined interest rate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this FD calculator free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, this FD Calculator is completely free and works instantly in your browser."
+      "@type": "SoftwareApplication",
+      "name": "Fixed Deposit Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "url": "https://instantage.live/fd-calculator.html",
+      "description": "Free online Fixed Deposit (FD) Calculator to estimate your maturity amount and interest earned.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
   ]
 }
 </script>
-
 </head>
+
 <body>
 <header class="header">
   <div class="container">
     <h1>Fixed Deposit (FD) Calculator</h1>
-    <p class="small">Calculate your FD maturity and interest easily online</p>
+    <div class="small">Calculate your FD maturity and total interest instantly</div>
   </div>
 </header>
 
 <nav>
   <div class="container">
-    <a href="index.html">Home</a> 
-    <a href="loan-emi-calculator.html">Loan/EMI</a> 
-    <a href="sip-calculator.html">SIP</a> 
-    <a href="fd-calculator.html">FD</a> 
-    <a href="rd-calculator.html">RD</a> 
-    <a href="bmi-calculator.html">BMI</a> 
-    <a href="bmr-calculator.html">BMR</a> 
-    <a href="calorie-calculator.html">Calories</a> 
-    <a href="age-calculator.html">Age</a> 
+    <a href="index.html">Home</a>
+    <a href="loan-emi-calculator.html">Loan/EMI</a>
+    <a href="sip-calculator.html">SIP</a>
+    <a href="fd-calculator.html">FD</a>
+    <a href="rd-calculator.html">RD</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="bmr-calculator.html">BMR</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="age-calculator.html">Age</a>
     <a href="zodiac-calculator.html">Zodiac</a>
   </div>
 </nav>
 
 <main class="main container">
-  <div class="card">
-    <h2>Calculate FD Maturity</h2>
-    <form id="fdCalc">
-      <div class="form-row">
-        <label>Principal (₹)</label>
-        <input id="fdPrincipal" type="number" required>
-      </div>
-      <div class="form-row">
-        <label>Annual interest rate (%)</label>
-        <input id="fdRate" type="number" step="0.01" required>
-      </div>
-      <div class="form-row">
-        <label>Tenure (years)</label>
-        <input id="fdYears" type="number" step="0.01" required>
-      </div>
-      <div class="form-row">
-        <label>Compounds per year</label>
-        <select id="fdComp">
-          <option value="1">Yearly</option>
-          <option value="4">Quarterly</option>
-          <option value="12" selected>Monthly</option>
-        </select>
-      </div>
-      <button type="submit">Calculate</button>
-    </form>
-    <div id="fdResult" class="results"></div>
-  </div>
+
+<div class="card">
+  <h2>FD Calculator</h2>
+  <form id="fdCalc">
+    <div class="form-row"><label>Principal (₹)</label><input id="fdPrincipal" type="number" required></div>
+    <div class="form-row"><label>Annual interest rate (%)</label><input id="fdRate" type="number" step="0.01" required></div>
+    <div class="form-row"><label>Tenure (years)</label><input id="fdYears" type="number" step="0.01" required></div>
+    <div class="form-row"><label>Compounds per year</label><select id="fdComp"><option value="1">Yearly</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option></select></div>
+    <button type="submit">Calculate</button>
+  </form>
+  <div id="fdResult" class="results"></div>
+</div>
+
+<section class="content">
+  <h2>What is a Fixed Deposit?</h2>
+  <p>A Fixed Deposit (FD) is one of the safest investment options offered by banks and NBFCs. You deposit a lump sum for a specific tenure and earn a fixed interest rate. The longer the tenure, the higher your total return.</p>
+
+  <h2>How to Use the FD Calculator</h2>
+  <ol>
+    <li>Enter the amount you wish to invest (Principal).</li>
+    <li>Input the annual interest rate offered by your bank.</li>
+    <li>Enter the tenure in years.</li>
+    <li>Select how often the interest is compounded (monthly, quarterly, yearly).</li>
+    <li>Click <strong>Calculate</strong> to see your maturity amount and interest.</li>
+  </ol>
+
+  <h2>Why Use This FD Calculator?</h2>
+  <ul>
+    <li>Instant and accurate compound interest results</li>
+    <li>Supports monthly, quarterly, and yearly compounding</li>
+    <li>No registration or downloads required</li>
+    <li>Completely free and secure</li>
+  </ul>
+
+  <h2>Example Calculation</h2>
+  <p>If you invest ₹1,00,000 for 5 years at 7% annual interest compounded quarterly, the maturity amount will be approximately ₹1,41,478. The total interest earned will be ₹41,478.</p>
+
+  <h2>FAQs</h2>
+  <p><strong>Can I use this calculator for recurring deposits?</strong> No, for RDs use our <a href="rd-calculator.html">Recurring Deposit Calculator</a>.</p>
+  <p><strong>Does this calculator show pre-tax returns?</strong> Yes, results shown are before tax deductions.</p>
+  <p><strong>Is FD safe?</strong> Yes, fixed deposits are considered safe investments backed by your bank or NBFC.</p>
+</section>
 
 <script>
-document.getElementById('fdCalc').addEventListener('submit',function(e){
-  e.preventDefault();
+document.getElementById('fdCalc').addEventListener('submit',function(e){e.preventDefault();
   const P=parseFloat(document.getElementById('fdPrincipal').value)||0;
   const r=parseFloat(document.getElementById('fdRate').value)/100||0;
   const yrs=parseFloat(document.getElementById('fdYears').value)||0;
@@ -109,6 +140,6 @@ document.getElementById('fdCalc').addEventListener('submit',function(e){
 
 </main>
 
-<footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
+<footer class="footer container">© 2025 Instant Calculators • All rights reserved</footer>
 </body>
 </html>
