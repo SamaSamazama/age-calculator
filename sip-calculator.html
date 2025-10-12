@@ -8,41 +8,58 @@
 <link rel="canonical" href="https://instantage.live/sip-calculator.html">
 <link rel="stylesheet" href="style.css">
 
-<!-- Structured Data (FAQ) -->
+<!-- Structured Data (FAQ + SoftwareApplication) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "How do I calculate SIP future value?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Enter your monthly investment, expected annual return, and tenure in years, then click Calculate to instantly find your SIP's future value and total invested amount."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate SIP future value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter your monthly investment, expected annual return, and tenure in years, then click Calculate to instantly find your SIP's future value and total invested amount."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is SIP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SIP (Systematic Investment Plan) is a method of investing a fixed amount every month in mutual funds to build wealth over time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this SIP calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this SIP Calculator is completely free and works instantly in your browser."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "What is SIP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SIP (Systematic Investment Plan) is a method of investing a fixed amount every month in mutual funds to build wealth over time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this SIP calculator free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, this SIP Calculator is completely free and works instantly in your browser."
+      "@type": "SoftwareApplication",
+      "name": "SIP Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "url": "https://instantage.live/sip-calculator.html",
+      "description": "Free online SIP Calculator to compute future value and total investment of your monthly SIPs instantly.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
   ]
 }
 </script>
-
 </head>
+
 <body>
 <header class="header">
   <div class="container">
@@ -87,6 +104,38 @@
     <div id="sipResult" class="results"></div>
   </div>
 
+  <section class="content">
+    <h2>What is a SIP?</h2>
+    <p>A Systematic Investment Plan (SIP) is a disciplined way to invest a fixed amount in mutual funds every month. It helps you build wealth gradually while taking advantage of compounding over time.</p>
+
+    <h2>How to Use This SIP Calculator</h2>
+    <ol>
+      <li>Enter the monthly investment amount.</li>
+      <li>Provide the expected annual return percentage.</li>
+      <li>Specify the investment tenure in years.</li>
+      <li>Click the <strong>Calculate</strong> button.</li>
+      <li>View your SIP’s future value and total invested amount instantly.</li>
+    </ol>
+
+    <h2>Example Calculation</h2>
+    <p>For instance, if you invest ₹5,000 per month at an expected annual return of 12% for 10 years, the calculator will show your total investment and expected maturity value at the end of the tenure.</p>
+
+    <h2>Benefits of Using Our SIP Calculator</h2>
+    <ul>
+      <li>Quick and accurate calculation of SIP maturity</li>
+      <li>Works on desktop, mobile, and tablet</li>
+      <li>No registration or fees required</li>
+      <li>Helps in financial planning and goal setting</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Can I adjust the expected return?</strong> Yes, you can change the annual return according to your mutual fund projections.</p>
+    <p><strong>Does it include compounding?</strong> Yes, the calculator automatically applies monthly compounding for accuracy.</p>
+    <p><strong>Is it safe to use?</strong> Absolutely. All calculations are done in your browser; no data is stored online.</p>
+
+    <p>Try our other calculators: <a href="fd-calculator.html">FD Calculator</a> or <a href="rd-calculator.html">RD Calculator</a> to plan your investments better.</p>
+  </section>
+
 <script>
 document.getElementById('sipForm').addEventListener('submit',function(e){
   e.preventDefault();
@@ -99,7 +148,6 @@ document.getElementById('sipForm').addEventListener('submit',function(e){
   document.getElementById('sipResult').innerHTML=`<strong>Future value:</strong> ₹${FV.toFixed(2)}<br><span class='small'>Invested: ₹${(P*n).toFixed(2)}</span>`;
 });
 </script>
-
 </main>
 
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
