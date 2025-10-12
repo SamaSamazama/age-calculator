@@ -8,41 +8,58 @@
 <link rel="canonical" href="https://instantage.live/age-calculator.html">
 <link rel="stylesheet" href="style.css">
 
-<!-- Structured Data (FAQ) -->
+<!-- Structured Data (FAQ + SoftwareApplication) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "How do I calculate my age?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Select your date of birth and optionally a reference date, then click Calculate Age to find your exact age in years, months, and days."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate my age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select your date of birth and optionally a reference date, then click Calculate Age to find your exact age in years, months, and days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate age for someone else?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can input any date of birth and a reference date to calculate age for anyone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this age calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this Age Calculator is completely free and works instantly in your browser."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Can I calculate age for someone else?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, you can input any date of birth and a reference date to calculate age for anyone."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this age calculator free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, this Age Calculator is completely free and works instantly in your browser."
+      "@type": "SoftwareApplication",
+      "name": "Age Calculator",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "url": "https://instantage.live/age-calculator.html",
+      "description": "Free online Age Calculator to find your exact age in years, months, and days instantly.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
   ]
 }
 </script>
-
 </head>
+
 <body>
 <header class="header">
   <div class="container">
@@ -83,6 +100,37 @@
     <div id="ageResult" class="results"></div>
   </div>
 
+  <section class="content">
+    <h2>What is an Age Calculator?</h2>
+    <p>An age calculator is a simple tool that lets you find your exact age based on your date of birth. It shows your age in years, months, and days within seconds. Whether you want to know your age for a form, event, or curiosity, this calculator makes it quick and effortless.</p>
+
+    <h2>How to Use This Age Calculator</h2>
+    <ol>
+      <li>Enter your date of birth in the first box.</li>
+      <li>Optionally, choose a reference date to compare against.</li>
+      <li>Click the <strong>Calculate Age</strong> button.</li>
+      <li>See your age displayed instantly below the form.</li>
+    </ol>
+
+    <h2>Example Calculation</h2>
+    <p>For example, if you were born on <strong>January 1, 2000</strong>, and today’s date is <strong>October 13, 2025</strong>, your current age is <strong>25 years, 9 months, and 12 days</strong>.</p>
+
+    <h2>Why Use Our Free Age Calculator?</h2>
+    <ul>
+      <li>Instant and accurate age calculation</li>
+      <li>No sign-up or download required</li>
+      <li>Works on mobile, tablet, and desktop</li>
+      <li>Free to use anytime</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Can I use it for someone else?</strong> Yes! Just enter their birth date and a reference date if needed.</p>
+    <p><strong>Can I find my age in months or days?</strong> Yes, this tool automatically breaks your age into years, months, and days.</p>
+    <p><strong>Does it save my data?</strong> No, your inputs are processed locally in your browser, ensuring privacy and speed.</p>
+
+    <p>Try our other tools like <a href="zodiac-calculator.html">Zodiac Calculator</a> or <a href="bmi-calculator.html">BMI Calculator</a> for more instant results.</p>
+  </section>
+
 <script>
 document.getElementById('ageCalc').addEventListener('submit',function(e){
   e.preventDefault();
@@ -97,7 +145,6 @@ document.getElementById('ageCalc').addEventListener('submit',function(e){
   document.getElementById('ageResult').innerHTML = `<strong>Years:</strong> ${years}<br><span class='small'>Months: ${months} • Days: ${days}</span>`;
 });
 </script>
-
 </main>
 
 <footer class="footer container">© 2025 Instant Calculators Hub • All rights reserved</footer>
