@@ -24,6 +24,48 @@
   }
   </script>
 
+  <style>
+    /* Calculator & Page */
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1, h2 { color: #2c3e50; }
+    .card { margin-bottom: 30px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.05); background: #fff; border-radius: 8px; }
+
+    /* Charts */
+    canvas {
+      width: 100% !important;
+      max-width: 600px;
+      height: auto !important;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      border-collapse: collapse;
+      overflow-x: auto;
+      display: block;
+    }
+    table th, table td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+    table th { background-color: #f2f2f2; }
+
+    /* References */
+    .references ul { padding-left: 20px; font-size: 14px; }
+
+    /* Mobile adjustments */
+    @media screen and (max-width: 768px) {
+      .card { padding: 15px; }
+      table th, table td { padding: 6px; font-size: 13px; }
+    }
+  </style>
+
   <script>
     function calculateEMI() {
       const principal = parseFloat(document.getElementById('loanAmount').value);
@@ -46,7 +88,7 @@
       document.getElementById('totalInterest').innerText = totalInterest.toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
     }
 
-    // Chart initialization
+    // Charts initialization
     window.addEventListener('load', () => {
       // Global Lending Interest Rates
       const ctx1 = document.getElementById('interestRateChart').getContext('2d');
@@ -93,7 +135,7 @@
         }
       });
 
-      // Average Personal Loan Interest Rates in the U.S.
+      // U.S. Personal Loan Interest Rates
       const ctx3 = document.getElementById('usLoanRateChart').getContext('2d');
       new Chart(ctx3, {
         type: 'pie',
@@ -138,7 +180,7 @@
 </nav>
 
 <main class="main container">
-  <!-- EMI Calculator Card -->
+  <!-- EMI Calculator -->
   <div class="card">
     <h2>EMI Calculator</h2>
     <p class="small">Enter your loan details below to calculate your EMI, total payment, and interest.</p>
@@ -163,7 +205,7 @@
     </div>
   </div>
 
-  <!-- EMI Info Section -->
+  <!-- EMI Info & FAQ -->
   <div class="card">
     <h3>What is an EMI?</h3>
     <p>An EMI (Equated Monthly Installment) is the fixed amount you pay every month to repay your loan over a specified period. It includes both principal and interest components.</p>
@@ -191,7 +233,7 @@
     <p>Check out our other tools: <a href="sip-calculator.html">SIP Calculator</a> or <a href="fd-calculator.html">FD Calculator</a> for more financial insights.</p>
   </div>
 
-  <!-- Data & Charts Section -->
+  <!-- Data & Charts -->
   <div class="card">
     <h1>Global Loan & EMI Trends (2020–2025)</h1>
 
@@ -222,21 +264,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Bank Consumers</td>
-            <td>$12,788</td>
-            <td>35%</td>
-          </tr>
-          <tr>
-            <td>Credit Union Consumers</td>
-            <td>$8,397</td>
-            <td>25%</td>
-          </tr>
-          <tr>
-            <td>Fintech Consumers</td>
-            <td>$13,422</td>
-            <td>40%</td>
-          </tr>
+          <tr><td>Bank Consumers</td><td>$12,788</td><td>35%</td></tr>
+          <tr><td>Credit Union Consumers</td><td>$8,397</td><td>25%</td></tr>
+          <tr><td>Fintech Consumers</td><td>$13,422</td><td>40%</td></tr>
         </tbody>
       </table>
     </section>
@@ -275,8 +305,8 @@
   </div>
 </main>
 
-<footer class="footer container" style="background-color:#fff; color:#000000;">
-  © 2025 Instant Calculators • All rights reserved
+<footer class="footer container" style="background-color:#fff; color:#000;">
+                                             © 2025 Instant Calculators • All rights reserved
 </footer>
 </body>
 </html>
