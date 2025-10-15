@@ -1,0 +1,21 @@
+# --------------------------------------------
+# Instantage.live - SEO Friendly Redirects
+# --------------------------------------------
+
+# Force HTTPS and remove www (use www if you prefer)
+RewriteEngine On
+
+# Redirect www to non-www (remove this block if you prefer www)
+RewriteCond %{HTTP_HOST} ^www\.instantage\.live [NC]
+RewriteRule ^(.*)$ https://instantage.live/$1 [L,R=301]
+
+# Force HTTPS (redirect http to https)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://instantage.live/$1 [L,R=301]
+
+# Redirect /index.html to /
+RewriteCond %{THE_REQUEST} /index\.html
+RewriteRule ^index\.html$ https://instantage.live/ [R=301,L]
+
+# Optional: set default index file
+DirectoryIndex index.html
