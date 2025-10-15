@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Canonical homepage only -->
+  <url>
+    <loc>https://instantage.live/</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 
-<url>
-  <loc>https://instantage.live/</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://instantage.live/index.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/loan-emi-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/sip-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/fd-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/rd-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/bmi-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/bmr-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/calorie-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/age-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://instantage.live/zodiac-calculator.html</loc>
-  <lastmod>2025-10-07T10:02:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://instantage.live/loan-emi-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
+  <url>
+    <loc>https://instantage.live/sip-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/fd-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/rd-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/bmi-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/bmr-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/calorie-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/age-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://instantage.live/zodiac-calculator.html</loc>
+    <lastmod>2025-10-07T10:02:04+00:00</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
 </urlset>
