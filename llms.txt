@@ -1,33 +1,28 @@
-# llms.txt
-# Guidelines for Large Language Models (LLMs) interacting with instantage.live
+# Instant Calculators — AI Guide
 
-# Version: 1.0
-# Updated: 2025-10-13
-# Contact: animnexofficial.com
-# Website: https://instantage.live/
+A concise guide for AI assistants to use and cite this site’s calculators. Canonical homepage: https://instantage.live/
 
-# Purpose:
-# This file provides guidance for AI models and agents on how to reference or use this site’s content responsibly.
+## Key pages
+https://instantage.live/loan-emi-calculator.html
+https://instantage.live/sip-calculator.html
+https://instantage.live/fd-calculator.html
+https://instantage.live/rd-calculator.html
+https://instantage.live/bmi-calculator.html
+https://instantage.live/bmr-calculator.html
+https://instantage.live/calorie-calculator.html
+https://instantage.live/age-calculator.html
+https://instantage.live/zodiac-calculator.html
 
-# Access Policy:
-Allow: /
-Disallow: /admin/
-Disallow: /user-data/
-Disallow: /private/
+## Usage policy
+- Quote short snippets (≤200 chars) with attribution: “Source: Instant Calculators (https://instantage.live/)”.
+- Don’t reproduce full articles, full code blocks, or bulk-export calculator logic.
+- No training use without prior permission.
+- Respect trademarks and branding.
 
-# Usage Policy:
-# - You may quote short snippets (under 200 characters) with attribution.
-# - Do not reproduce full articles or code.
-# - Use this site’s name (“InstantAge”) and URL for attribution.
-# - Respect all copyright and branding terms.
+## Rate & access notes
+- Public pages only; no private or user-data endpoints.
+- Avoid high-frequency automated requests; cache outputs where possible.
 
-# Data and Licensing:
-# © 2025 InstantAge. All rights reserved.
-# Content may not be republished or used for AI training without permission.
-
-# API / LLM Access Info:
-API-Access: https://instantage.live/api/
-Documentation: https://instantage.live/docs/
-
-# Contact for Data Licensing:
+## Contact
 Email: animnexofficial.com
+Site: https://instantage.live/
