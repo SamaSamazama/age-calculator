@@ -9,6 +9,26 @@
 <link rel="canonical" href="https://instantage.live/age-calculator.html">
 <link rel="stylesheet" href="style.css">
 
+<style>
+.example-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+.example-table th, .example-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.example-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.example-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+</style>
+
 <!-- Open Graph for Shares -->
 <meta property="og:title" content="Age Calculator - Exact Age in Years, Months, Days & Seconds">
 <meta property="og:description" content="Find your precise age down to the second with this free tool.">
@@ -130,9 +150,9 @@
         <tr><th>Birthdate</th><th>Age (Y/M/D)</th><th>Total Days</th><th>Notes</th></tr>
       </thead>
       <tbody>
-        <tr><td>January 1, 2000</td><td>25 / 9 / 16</td><td>9421</td><td>Millennial milestone!</td></tr>
-        <tr><td>February 29, 2000 (Leap Day)</td><td>25 / 7 / 18</td><td>9362</td><td>Handles leap years accurately.</td></tr>
-        <tr><td>July 4, 1776</td><td>249 / 3 / 13</td><td>91050</td><td>Historical fun: US Independence age.</td></tr>
+        <tr><td>January 1, 2000</td><td>25 / 9 / 16</td><td>9,421</td><td>Millennial milestone!</td></tr>
+        <tr><td>February 29, 2000 (Leap Day)</td><td>25 / 7 / 18</td><td>9,362</td><td>Handles leap years accurately.</td></tr>
+        <tr><td>July 4, 1776</td><td>249 / 3 / 13</td><td>91,050</td><td>Historical fun: US Independence age.</td></tr>
       </tbody>
     </table>
     <p>Pro tip: Leap year babies get an extra day every 4 years—our calculator accounts for it!</p>
@@ -156,6 +176,16 @@
       <li>100 years: A centenarian—total seconds? Over 3 billion.</li>
     </ul>
     <p>Curious about health? Pair with our <a href="bmi-calculator.html">BMI Calculator</a> for age-adjusted insights.</p>
+
+    <h2>Age Across Cultures: Beyond the Gregorian Calendar</h2>
+    <p>While our calculator uses the standard Gregorian system (common in the West), age traditions vary globally. In Korea, age starts at 1 at birth and increases on New Year's Day (seollal)—so a newborn might "turn 2" days later! In Japan, it's similar but tied to the imperial calendar until recently. For virtual age calcs, try inputting Lunar New Year as your reference date.</p>
+    <p>Example: A child born Dec 31, 2024, in a New Year system would be "1" on Jan 1, 2025. Our tool adapts via custom dates—great for international users or historical events like ancient Egyptian solar years (365 days, no leap adjustments).</p>
+    <ul>
+      <li><strong>Western:</strong> Birthday bump-up.</li>
+      <li><strong>Chinese:</strong> New Year +1 annually.</li>
+      <li><strong>Islamic:</strong> Lunar calendar (354 days/year)—shorter "years" mean faster aging!</li>
+    </ul>
+    <p>Pro tip: For precise cultural calcs, pair with our <a href="zodiac-calculator.html">Zodiac Calculator</a> for Eastern insights.</p>
 
     <h2>Frequently Asked Questions</h2>
     <p><strong>Can I use it for someone else?</strong> Yes! Just enter their birth date and a reference date if needed.</p>
@@ -225,7 +255,16 @@ document.getElementById('ageCalc').addEventListener('submit',function(e){
   let days = ref.getDate() - dob.getDate();
   if (days < 0) {
     months--;
-    const pm = new Date(ref.getFullYear(), ref.getMonth(), 0);
+    // Correct borrow: days in the month before ref month
+    let prevMonth = ref.getMonth(); // 0-based
+    let prevYear = ref.getFullYear();
+    if (prevMonth === 0) {
+      prevMonth = 11;
+      prevYear--;
+    } else {
+      prevMonth--;
+    }
+    const pm = new Date(prevYear, prevMonth + 1, 0); // Last day of prev month
     days += pm.getDate();
   }
   if (months < 0) {
@@ -255,11 +294,11 @@ document.getElementById('ageCalc').addEventListener('submit',function(e){
     <p class="age-summary"><strong>${years} years</strong>, ${months} months, ${days} days</p>
     <p class="age-detail">${hours} hours, ${minutes} minutes, and ${seconds} seconds.</p>
     <ul class="age-stats">
-      <li>Total days lived: ${totalDays}</li>
-      <li>Total weeks: ${totalWeeks}</li>
+      <li>Total days lived: ${totalDays.toLocaleString()}</li>
+      <li>Total weeks: ${totalWeeks.toLocaleString()}</li>
       <li>Total seconds: ${totalSeconds.toLocaleString()}</li>
     </ul>
-    <p class="share-note">Fun fact: You've lived enough for ${totalDays} sunrises! Share your stats.</p>
+    <p class="share-note">Fun fact: You've lived enough for ${totalDays.toLocaleString()} sunrises! Share your stats.</p>
   `;
 });
 </script>
